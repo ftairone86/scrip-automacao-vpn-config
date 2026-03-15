@@ -5,7 +5,7 @@ Aplicação simples (GUI em PySide6) para **gerar** um script de configuração 
 > Estado atual do código (sem “inventar feature”):
 > - O botão **Gerar Scripts e Salvar Arquivos** gera o texto e abre um diálogo para escolher onde salvar.
 > - O botão **Enviar para os Firewalls** existe na interface, mas no `app.py` **ainda não faz o envio**.
-> - O envio por SSH está implementado no `send.py` (via CLI).
+
 
 ---
 
@@ -48,7 +48,6 @@ python3 app.py
 
 ## Como enviar para os firewalls (CLI)
 
-O envio automatizado via SSH está no `send.py`.
 
 Exemplo (Fortigate + Palo Alto):
 
