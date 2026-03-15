@@ -53,44 +53,21 @@ Exemplo (Fortigate + Palo Alto):
 
 Está funcionalidade será implementada posteriormente usando netmiko
 
-```bash
-python3 send.py \
-  --config-file config_vpn_gerada.txt \
-  --forti-host 10.0.0.1 --forti-user admin --forti-pass 'SENHA' \
-  --palo-host 10.0.0.2 --palo-user admin --palo-pass 'SENHA'
-```
+`
 
-Sem `commit` no Palo Alto:
-
-```bash
-python3 send.py \
-  --config-file config_vpn_gerada.txt \
-  --palo-host 10.0.0.2 --palo-user admin --palo-pass 'SENHA' \
-  --no-commit
-```
-
-Modo simulação (não conecta; apenas imprime o que enviaria):
+## Modo simulação (não conecta; apenas imprime o que enviaria):
 
 ```bash
 python3 send.py --config-file config_vpn_gerada.txt --sim
 ```
 
-Notas:
-- O `send.py` tenta separar automaticamente o conteúdo em bloco **Fortigate** e bloco **Palo Alto** usando os marcadores `#      FORTIGATE CLI` e `#      PALO ALTO`.
-- No Palo Alto o fluxo padrão é: `configure` → aplica `set ...` → `commit` → `exit`.
 
 ---
 
 ## Arquivos importantes
 
 - `app.py`: GUI (geração + salvar + placeholder do botão enviar).
-- `send.py`: envio por SSH (Netmiko) e CLI.
 - `config_vpn_gerada.txt`: exemplo de arquivo gerado.
-- `Plano_automacao_IPSEC.md`: plano/guia técnico (também existe em `docs/Plano_automacao_IPSEC.md`).
-- `ALTERACOES_send.md`: resumo do que foi alterado no `send.py`.
-- `ANTES_DEPOIS_salvar_config.md`: antes/depois da alteração do “Salvar como”.
-- `send_switch_legacy.py`: backup de um `send.py` antigo (switch/IOS), mantido apenas como referência.
-
 ---
 
 ## Problemas comuns
